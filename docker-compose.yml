@@ -16,6 +16,7 @@ services:
             - db:/var/lib/mysql
 
     http:
+        image: marcpartensky/pterodactyl-http
         build:
             context: services/http
             dockerfile: Dockerfile
@@ -32,6 +33,7 @@ services:
             - storage:/var/www/html/pterodactyl/storage
 
     php:
+        image: marcpartensky/pterodactyl-php
         build:
             context: services/php
             dockerfile: Dockerfile
